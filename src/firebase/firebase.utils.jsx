@@ -12,6 +12,8 @@ const config = {
     measurementId: "G-REMC4J70RW"
 };
 
+firebase.initializeApp(config);
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if(!userAuth) return;
 
@@ -29,8 +31,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
                 createdAt,
                 ...additionalData
 
-            })
+            });
         } catch(error) {
+            console.log('error creating user', error.message);
 
         }
     }
@@ -39,7 +42,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
 };
 
-firebase.initializeApp(config);
+
 
 
 export const auth= firebase.auth();
