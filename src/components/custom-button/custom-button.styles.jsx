@@ -7,9 +7,9 @@ const buttonStyles =css`
 
  
  &:hover {
-    background-color: black;
-    color: white;
-    border: none;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
  }
 `
  
